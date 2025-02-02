@@ -31,10 +31,6 @@ public class DeviceService {
         return deviceRepository.findById(id);
     }
 
-    public List<Device> getDevicesByType(DeviceType type) {
-        return deviceRepository.findByType(type);
-    }
-
     public List<Device> searchDevicesByName(String name) {
         return deviceRepository.findByNameContainingIgnoreCase(name);
     }
@@ -43,14 +39,12 @@ public class DeviceService {
         return deviceRepository.findAll().stream()
                 .filter(device -> type == null || device.getType() == type)
                 .map(device -> {
-                    // Фильтруем модели устройства
                     List<Model> filteredModels = device.getModels().stream()
                             .filter(model -> color == null || model.getColor().equalsIgnoreCase(color))
                             .filter(model -> minPrice == null || model.getPrice().compareTo(minPrice) >= 0)
                             .filter(model -> maxPrice == null || model.getPrice().compareTo(maxPrice) <= 0)
                             .collect(Collectors.toList());
 
-                    // Создаем копию устройства с отфильтрованными моделями
                     Device filteredDevice = new Device(
                             device.getId(),
                             device.getName(),
@@ -72,7 +66,7 @@ public class DeviceService {
 
     public List<Device> getSortedDevices(String sortBy) {
         if (!"name".equalsIgnoreCase(sortBy) && !"price".equalsIgnoreCase(sortBy)) {
-            return Collections.emptyList(); // Возвращаем пустой список вместо ошибки
+            return Collections.emptyList();
         }
 
         List<Device> devices = deviceRepository.findAll();

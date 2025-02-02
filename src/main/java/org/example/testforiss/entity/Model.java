@@ -44,7 +44,6 @@ public class Model {
     @Column(nullable = false)
     private boolean availability;
 
-    // 🔹 Дополнительные поля в зависимости от типа устройства
     private String category;        // TV, PC
     private String technology;      // TV
     private Double dustContainerVolume; // Vacuum
