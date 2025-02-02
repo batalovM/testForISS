@@ -75,15 +75,15 @@ spring.jpa.hibernate.ddl-auto=update
 ##  Основные эндпоинты
 
 ###  **Device API (Реестр техники)**
-| Метод | Эндпоинт | Описание |
-|--------|------------------|--------------------------------|
-| `GET` | `/api/devices` | Получить все устройства |
-| `GET` | `/api/devices/{id}` | Получить устройство по ID |
-| `GET` | `/api/devices/search?name=...` | Поиск по названию |
-| `GET` | `/api/devices/filter?type=...&color=...&minPrice=...&maxPrice=...` | Фильтрация |
-| `GET` | `/api/devices/sort?sortBy=name|price` | Сортировка |
-| `POST` | `/api/devices` | Добавить устройство |
-| `DELETE` | `/api/devices/{id}` | Удалить устройство |
+| Метод    | Эндпоинт                                                     | Описание                  |
+|----------|--------------------------------------------------------------|---------------------------|
+| `GET`    | `/api/devices`                                               | Получить все устройства   |
+| `GET`    | `/api/devices/{id}`                                          | Получить устройство по ID |
+| `GET`    | `/api/devices/search?name=...`                               | Поиск по названию         |
+| `GET`    | `/api/devices/filter?type=...&color=...&minPrice=...&maxPrice=...` | Фильтрация                |
+| `GET`    | `/api/devices/sort?sortBy=name`                              | Сортировка                |
+| `POST`   | `/api/devices`                                               | Добавить устройство       |
+| `DELETE` | `/api/devices/{id}`                                          | Удалить устройство        |
 
 ###  **Model API (Модели техники)**
 | Метод | Эндпоинт | Описание |
