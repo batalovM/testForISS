@@ -29,6 +29,7 @@ REST API для управления реестром техники (телев
 ```sql
 CREATE DATABASE some_name;
 ```
+#### И заполните файл с помощью скрипта data.sql 
 Настройте подключение в `src/main/resources/application.properties`:
 ```properties
 spring.datasource.url=jdbc:postgresql://localhost:5432/some_name
